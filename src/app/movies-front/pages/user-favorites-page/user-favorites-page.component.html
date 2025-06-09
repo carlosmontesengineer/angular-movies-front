@@ -1,0 +1,11 @@
+@if( favoriteResource.isLoading() ) {
+<div class="flex justify-center items-center h-screen">
+  <span class="loading loading-spinner loading-lg"></span>
+</div>
+}
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2">
+   @for (favorite of favoriteResource.value(); track $index) {
+  <app-movie-card [movie]="favorite" />
+   }
+</div>

@@ -1,0 +1,53 @@
+<form
+  class=" gap-3 mx-4 mt-3 text-center justify-center mb-4"
+  [formGroup]="calificationForm"
+  (ngSubmit)="updateFavoriteCalification()"
+>
+  <div class="rating mb-2">
+    <input
+      type="radio"
+      formControlName="calification"
+      value="1"
+      class="mask mask-star"
+      aria-label="1 star"
+    />
+    <input
+      type="radio"
+      formControlName="calification"
+      value="2"
+      class="mask mask-star"
+      aria-label="2 stars"
+    />
+    <input
+      type="radio"
+      formControlName="calification"
+      value="3"
+      class="mask mask-star"
+      aria-label="3 stars"
+    />
+    <input
+      type="radio"
+      formControlName="calification"
+      value="4"
+      class="mask mask-star"
+      aria-label="4 stars"
+    />
+    <input
+      type="radio"
+      formControlName="calification"
+      value="5"
+      class="mask mask-star"
+      aria-label="5 stars"
+    />
+  </div>
+
+  <textarea
+    formControlName="comment"
+    class="textarea mb-2"
+    placeholder="Comentario..."
+  ></textarea>
+
+  <div class="card-actions justify-end">
+    <a (click)="updateFavoriteCalification()" class="btn btn-primary"> Calificar </a>
+  </div>
+</form>

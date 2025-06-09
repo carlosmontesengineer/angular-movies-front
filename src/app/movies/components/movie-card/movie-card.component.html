@@ -1,0 +1,21 @@
+<div class="card card-compact bg-base-100 shadow-xl animate-fadeIn">
+  <figure class="h-100 overflow-hidden flex items-center justify-center">
+    <img
+      class="rounded object-cover h-full w-full"
+      class="rounded"
+      [src]="movie().movie.poster"
+      [alt]="movie().movie.title"
+    />
+  </figure>
+  <div class="card-body">
+    <h2
+      class="card-title font-montserrat text-accent text-lg hover:underline cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
+    >
+      {{ movie().movie.title }}
+    </h2>
+    <p>{{ movie().movie.year }}...</p>
+
+    <app-calification-fotter [comment]="movie().comment" [movieId]="movie().id" [rating]="movie().rating" />
+
+  </div>
+</div>

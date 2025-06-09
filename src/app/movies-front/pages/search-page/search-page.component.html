@@ -1,0 +1,47 @@
+<form
+  class="flex gap-3 mx-4 mt-3 text-center justify-center mb-4"
+  (ngSubmit)="searchMovies()"
+  [formGroup]="myForm"
+>
+  <label class="input">
+    <svg
+      class="h-[1em] opacity-50"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2.5"
+        fill="none"
+        stroke="currentColor"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </g>
+    </svg>
+    <input
+      type="search"
+      formControlName="query"
+      class="grow"
+      placeholder="Search"
+    />
+    <kbd class="kbd kbd-sm">⌘</kbd>
+    <kbd class="kbd kbd-sm">K</kbd>
+  </label>
+  <label class="select">
+    <span class="label">Tipo</span>
+    <select formControlName="type">
+      <option value="null">Sin selección</option>
+      <option value="movie">Película</option>
+      <option value="series">Serie</option>
+    </select>
+  </label>
+  <button class="btn">Buscar</button>
+</form>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-5">
+  @for (omdbMovie of omDbMovies ; track $index) {
+    <app-movie-omdb-card [movie]="omdbMovie" />
+  }
+</div>
