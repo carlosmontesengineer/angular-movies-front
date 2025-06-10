@@ -1,15 +1,10 @@
-import {
-  Component,
-  computed,
-  input,
-  linkedSignal,
-  signal,
-} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, computed, input, linkedSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pagination',
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule],
   templateUrl: './pagination.component.html',
 })
 export class PaginationComponent {

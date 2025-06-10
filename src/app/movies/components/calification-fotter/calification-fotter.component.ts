@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MovieService } from '@movies/services/movie.service';
 import { firstValueFrom } from 'rxjs';
-import { AlertService } from 'src/app/shared/mappers/alert.services';
+import { AlertService } from 'src/app/shared/alerts/alert.services';
 
 @Component({
   selector: 'app-calification-fotter',

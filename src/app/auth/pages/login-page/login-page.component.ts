@@ -3,7 +3,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 import { AuthService } from '@auth/services/auth.service';
-import { AlertService } from 'src/app/shared/mappers/alert.services';
+import { AlertService } from 'src/app/shared/alerts/alert.services';
+import { FormUtils } from 'src/app/shared/utils/form-utils';
 
 @Component({
   selector: 'app-login-page',
@@ -20,6 +21,8 @@ export class LoginPageComponent {
   authService = inject(AuthService);
   alert = inject(AlertService);
 
+  formUtils = FormUtils;
+
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -27,11 +30,7 @@ export class LoginPageComponent {
 
   onSubmit() {
     if (this.loginForm.invalid) {
-      this.alert.error('Verifique la información');
-      this.hasError.set(true);
-      setTimeout(() => {
-        this.hasError.set(false);
-      }, 2000);
+       this.loginForm.markAllAsTouched();
       return;
     }
 
@@ -42,11 +41,9 @@ export class LoginPageComponent {
         this.router.navigateByUrl('/favorites');
         return;
       }
-      this.alert.error('Verifique la información');
+      this.alert.error('Usuario o contraseña incorrectos, porfavor verifique');
        this.hasError.set(true);
-      // setTimeout(() => {
-      //   this.hasError.set(false);
-      // }, 2000);
+
     });
   }
 

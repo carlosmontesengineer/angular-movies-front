@@ -3,19 +3,16 @@
     <img
       class="rounded object-cover h-full w-full"
       class="rounded"
-      [src]="movie().movie.poster"
-      [alt]="movie().movie.title"
+      [src]="movie().poster"
+      [alt]="movie().title"
     />
   </figure>
-  <div class="card-body">
+  <div class="card-body sm:items-start items-center">
     <h2
       class="card-title font-montserrat text-accent text-lg hover:underline cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap"
     >
-      {{ movie().movie.title }}
+      {{ movie().title }}
     </h2>
-    <p>{{ movie().movie.year }}...</p>
-
-    <app-calification-fotter [comment]="movie().comment" [movieId]="movie().id" [rating]="movie().rating" />
-
+    <p>{{ movie().year }}...</p>
   </div>
 </div>

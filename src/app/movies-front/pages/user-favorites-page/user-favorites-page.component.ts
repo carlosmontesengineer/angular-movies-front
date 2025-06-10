@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { MovieCardComponent } from '../../../movies/components/movie-card/movie-card.component';
+import { FavoriteCardComponent } from '../../../movies/components/favorite-card/favorite-card.component';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { MovieService } from '@movies/services/movie.service';
 
 @Component({
   selector: 'app-user-favorites-page',
-  imports: [MovieCardComponent],
+  imports: [FavoriteCardComponent],
   templateUrl: './user-favorites-page.component.html',
 })
 export class UserFavoritesPageComponent {

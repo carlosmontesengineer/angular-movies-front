@@ -7,7 +7,7 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { AuthResponse } from '@auth/interfaces/auth-response.interface';
 import { User } from '@auth/interfaces/user.interface';
 import { Router } from '@angular/router';
-import { AlertService } from 'src/app/shared/mappers/alert.services';
+import { AlertService } from 'src/app/shared/alerts/alert.services';
 import { Register } from '@auth/interfaces/register.interface';
 
 type AuthStatus = 'checking' | 'authenticated' | 'not-authenticated';
@@ -86,6 +86,7 @@ export class AuthService {
     this._authStatus.set('not-authenticated');
 
     localStorage.removeItem('token');
+
   }
 
   private handleAuthSuccess({ token, user }: AuthResponse) {

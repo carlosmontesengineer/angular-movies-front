@@ -1,0 +1,69 @@
+<div class="card card-compact bg-base-100 shadow-xl w-full h-[600px]">
+  <figure class="h-[4350px] overflow-hidden flex items-center justify-center">
+    <img
+      class="object-cover w-full h-full"
+      [src]="movie().movie.poster"
+      [alt]="movie().movie.title"
+    />
+  </figure>
+  <div class="card-body p-4">
+    <h2 class="card-title text-accent text-lg overflow-hidden text-ellipsis whitespace-nowrap">
+      {{ movie().movie.title }}
+    </h2>
+    <p>{{ movie().movie.year }}</p>
+    <app-calification-fotter
+      [comment]="movie().comment"
+      [movieId]="movie().id"
+      [rating]="movie().rating"
+    />
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="card card-compact bg-base-100 shadow-xl w-full h-[400px]">
+  <figure class="h-[250px] overflow-hidden flex items-center justify-center">
+    <img
+      class="object-cover w-full h-full"
+      [src]="movie().movie.poster"
+      [alt]="movie().movie.title"
+    />
+  </figure>
+  <div class="card-body p-4">
+    <h2 class="card-title text-accent text-lg overflow-hidden text-ellipsis whitespace-nowrap">
+      {{ movie().movie.title }}
+    </h2>
+    <p>{{ movie().movie.year }}</p>
+    <app-calification-fotter
+      [comment]="movie().comment"
+      [movieId]="movie().id"
+      [rating]="movie().rating"
+    />
+  </div>
+</div> -->

@@ -23,34 +23,38 @@
       >
         <li>
           <a
-            routerLink="/gender/men"
+            routerLink="/"
             class="btn btn-ghost"
             routerLinkActive="text-secondary"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
-            Hombres
+            Home
           </a>
         </li>
         <li>
           <a
-            routerLink="/gender/women"
+            routerLink="/search"
             class="btn btn-ghost"
             routerLinkActive="text-secondary"
           >
-            Mujeres
+            Buscar
           </a>
         </li>
         <li>
           <a
-            routerLink="/gender/kid"
+            routerLink="/favorites"
             class="btn btn-ghost"
             routerLinkActive="text-secondary"
           >
-            Kids
+            Favoritos
           </a>
         </li>
       </ul>
     </div>
-    <a routerLink="/" class="btn btn-ghost text-xl text-secondary font-montserrat">
+    <a
+      routerLink="/"
+      class="btn btn-ghost text-xl text-secondary font-montserrat"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -69,8 +73,19 @@
       <span class=""> MOVIES</span>
     </a>
   </div>
-  <div class="navbar-center hidden lg:flex">
+  <div class="navbar-center hidden sm:block lg:flex">
     <ul class="menu menu-horizontal px-1">
+      <li>
+        <a
+          routerLink="/"
+          class="btn btn-ghost"
+          routerLinkActive="text-secondary"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </a>
+      </li>
+      @if ( authService.authStatus() === 'authenticated' ){
       <li>
         <a
           routerLink="/search"
@@ -80,6 +95,7 @@
           Buscar
         </a>
       </li>
+      } @if ( authService.authStatus() === 'authenticated' ){
       <li>
         <a
           routerLink="/favorites"
@@ -89,18 +105,17 @@
           Favoritos
         </a>
       </li>
+      }
     </ul>
   </div>
   <div class="navbar-end gap-4">
     <!--  -->
 
     @if ( authService.authStatus() === 'authenticated' ) {
-    <button class="btn btn-ghost">
+    <button class="btn btn-ghost hidden sm:block">
       {{ authService.user()?.fullName }}
     </button>
-    <button class="btn btn-sm btn-error" (click)="authService.logout()">
-      Salir
-    </button>
+    <button class="btn btn-sm btn-secondary" (click)="logOut()">Salir</button>
     }
     <!--  -->
     @else if ( authService.authStatus() === 'not-authenticated' ) {

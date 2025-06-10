@@ -4,8 +4,8 @@
 </div>
 }
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2">
-   @for (favorite of favoriteResource.value(); track $index) {
-  <app-movie-card [movie]="favorite" />
-   }
+<div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-4">
+  @for (favorite of favoriteResource.value(); track $index) {
+  <app-favorite-card [movie]="favorite" />
+  }
 </div>

@@ -2,11 +2,10 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MovieService } from '@movies/services/movie.service';
 import { firstValueFrom } from 'rxjs';
-import { MovieCardComponent } from '../../../movies/components/movie-card/movie-card.component';
 import { Movie } from '@movies/interfaces/movie-interface';
 import { MovieOmdbCardComponent } from '../../../movies/components/movieOmdbCard/movieOmdbCard.component';
 import { OmdbMovie } from '@movies/interfaces/movies-omdb.interface';
-import { AlertService } from 'src/app/shared/mappers/alert.services';
+import { AlertService } from 'src/app/shared/alerts/alert.services';
 
 @Component({
   selector: 'app-search-page',

@@ -31,7 +31,11 @@
       formControlName="emailR"
     />
   </label>
-
+  @if ( formUtils.isValidField( registerForm, 'emailR') ) {
+  <span class="form-text text-danger">
+    {{ formUtils.getFieldError(registerForm, "emailR") }}
+  </span>
+  }
   <!-- FullName -->
   <label
     class="input input-bordered flex items-center gap-3 bg-base-100 text-base-content"
@@ -54,6 +58,11 @@
       formControlName="fullName"
     />
   </label>
+  @if ( formUtils.isValidField( registerForm, 'fullName') ) {
+  <span class="form-text text-secondary">
+    {{ formUtils.getFieldError(registerForm, "fullName") }}
+  </span>
+  }
 
   <!-- Password -->
   <label
@@ -78,6 +87,11 @@
       formControlName="password"
     />
   </label>
+  @if ( formUtils.isValidField( registerForm, 'password') ) {
+  <span class="form-text text-secondary">
+    {{ formUtils.getFieldError(registerForm, "password") }}
+  </span>
+  }
 
   <!-- repeat Password -->
   <label
@@ -108,7 +122,7 @@
 
   <!-- Registro -->
   <p class="text-sm text-center text-base-content">
-    ¿No tienes cuenta?
+
     <a routerLink="/auth/login" class="text-secondary underline"
       >Iniciar sesión</a
     >

@@ -1,9 +1,10 @@
 <form
-  class="flex gap-3 mx-4 mt-3 text-center justify-center mb-4"
+  class="flex flex-col sm:flex-row gap-3 mx-4 mt-3 text-center justify-center mb-4"
   (ngSubmit)="searchMovies()"
   [formGroup]="myForm"
 >
-  <label class="input">
+  <!-- Input de búsqueda -->
+  <label class="input w-full sm:w-auto">
     <svg
       class="h-[1em] opacity-50"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,20 +25,25 @@
       type="search"
       formControlName="query"
       class="grow"
-      placeholder="Search"
+      placeholder="Título"
     />
     <kbd class="kbd kbd-sm">⌘</kbd>
     <kbd class="kbd kbd-sm">K</kbd>
   </label>
-  <label class="select">
+
+  <!-- Select -->
+  <label class="select w-full sm:w-auto">
     <span class="label">Tipo</span>
-    <select formControlName="type">
+    <select formControlName="type" class="w-full sm:w-auto">
       <option value="null">Sin selección</option>
       <option value="movie">Película</option>
       <option value="series">Serie</option>
     </select>
   </label>
-  <button class="btn">Buscar</button>
+
+  <!-- Botón -->
+ <button (click)="searchMovies()" class="btn w-40 sm:w-32">Buscar</button>
+
 </form>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-5">

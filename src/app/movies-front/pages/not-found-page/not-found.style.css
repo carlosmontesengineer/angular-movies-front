@@ -1,0 +1,18 @@
+.not-found-container {
+  text-align: center;
+  margin-top: 100px;
+  color: #333;
+}
+
+.not-found-container h1 {
+  font-size: 5rem;
+  color: #c0392b;
+}
+
+.not-found-container a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}

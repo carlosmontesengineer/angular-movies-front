@@ -28,12 +28,12 @@ export const moviesFrontRouter: Routes = [
       },
       {
         path: 'calification/:id',
-        component: NotFoundPageComponent,
+        component: MovieCalificationPageComponent,
         canMatch: [AuthenticatedGuard],
       },
       {
         path: '**',
-        redirectTo: '',
+        component: NotFoundPageComponent,
       },
     ],
   },
